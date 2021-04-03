@@ -59,9 +59,12 @@
             var w = con.width = window.innerWidth;
             var h = con.height = window.innerHeight;
 
+            setWH = () => {
+                (navigator.platform == "Win32" || navigator.platform == "Win64") ? (w = con.width = window.innerWidth,h = con.height = window.innerHeight) : (w = con.width = 1400,h = con.height = 800);
+            }
+
             window.onresize = () => {
-                w = con.width = window.innerWidth;
-                h = con.height = window.innerHeight;
+                setWH();
                 fps.style.fontSize = fps.clientWidth * .1 + "px";
             }
 
@@ -92,7 +95,7 @@
             }, 1000);
 
             var snowCount = 50;
-            snowCount = (navigator.platform == "Win32" || navigator.platform == "Win64") ? 15000 : 50;
+            snowCount = (navigator.platform == "Win32" || navigator.platform == "Win64") ? 1500 : 500;
             var snowArr = [];
             var img = new Image();
             img.src = "images/snow.png";
