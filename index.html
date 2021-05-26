@@ -7,7 +7,7 @@
     <title>雪花</title>
     <style>
         * {
-            margin: 0; 
+            margin: 0;
             padding: 0;
         }
 
@@ -98,43 +98,40 @@
             img.src = "images/snow.png";
 
             class Snow_Z_0 {
-                // x;
-                // y;
-                // vx;
-                // vy;
-                // h;
-                // wh;
-                // rx;
-                // ry;
                 d = null;
                 init() {
                     this.x = Math.random() * w;
                     this.y = 0;
+                    this.rotate = 5;
                     this.vx = Math.random() * (2 - 1) + 1;
                     this.vy = Math.random() * (max * 0.95 - min * 0.8) + min;
+                    this.addRotate = Math.random() * 10;
                     this.h = Math.random() * (h * 0.95 - h * 0.8) + h * 0.9;
                     this.wh = Math.random() * 15 + 10;
                 }
                 draw() {
+                    // ctx.beginPath();
                     ctx.drawImage(img, this.x, this.y, this.wh, this.wh);
+                    // ctx.rotate(this.rotate * Math.PI / 180);
+                    // ctx.closePath();
                     this.update();
                 }
                 update() {
-                    this.y < this.h ? this.y += this.vy : this.init();
+                    this.y < this.h ? (this.y += this.vy, this.rotate += this.addRotate) : this.init();
                 }
             }
 
             class Snow_Z_1 extends Snow_Z_0 {
                 d = true;
                 update() {
-                    (this.y < this.h && this.x >= 0 && this.x <= w) ? (this.x += this.vx, this.y += this.vy) : this.init(); 
+                    (this.y < this.h && this.x >= 0 && this.x <= w) ? (this.x += this.vx, this.y += this.vy, this.rotate += this.addRotate) : this.init();
                 }
             }
 
             class Snow_Z_2 extends Snow_Z_1 {
                 d = false;
                 update() {
-                    (this.y < this.h && this.x >= 0 && this.x <= w) ? (this.x -= this.vx, this.y += this.vy) : this.init();
+                    (this.y < this.h && this.x >= 0 && this.x <= w) ? (this.x -= this.vx, this.y += this.vy, this.rotate += this.addRotate) : this.init();
                 }
             }
 
