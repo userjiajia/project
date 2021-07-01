@@ -1,50 +1,91 @@
+
+var windowWidth = $(window).width();
+if(windowWidth < 767){
+	// do something
+	console.log(11);
+	$("#container p").style.fontSize=24+'px'
+
+}
+// if(windowWidth >= 640){
+// 	// do something
+// }
+
+
+
+function resizeFont() {
+	//获取屏幕宽度
+	let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+	//设计图参考宽度
+	let design = 750;
+	if (clientWidth > 750){
+		document.getElementsByTagName('html').item(0).style.fontSize = '39px';
+
+	}else{
+		document.getElementsByTagName('html').item(0).style.fontSize = clientWidth / design * 100 + 'px';
+	}
+}
+resizeFont();
+window.onresize = function () {
+	resizeFont();
+}
+
+
+
 let noText = [{
-    text: "从我第一次见到你,我就心跳了🥰😘"
+    text: "我喜欢你，如果一颗星星代表我对你的一见钟情，那么你准备好迎接整个宇宙的万箭齐发了吗？🥰😘"
 },
 {
-    text: "我不要这世间的繁华，你就是我的天下。此生有你，世间再无他。💖"
+    text: "我喜欢你，谢谢你撑到我找到你。💖"
 },
 {
-    text: "我不会说多醉人的情话，但我只想带你回家🏬"
+    text: "我喜欢你，我想变得有趣，变得特别，变成你眼里的一点星光。🏬"
 },
 {
-    text: "如果能和你在一起，那我以后可以不用吃糖了🍬😊❤"
+    text: "我喜欢你，我不仅可爱，我还可爱你了🍬😊❤"
 },
 {
-    text: "你真的不考虑下嘛?给我们彼此一个机会吧🙁😭"
+    text: "反正早晚都得谈恋爱，和我谈可以吗?🙁😭"
 }];
 
 let countNo = 0;
 
 yes = () => {
-    // document.getElementById("finalYes").style.display = 'block';
-    // setTimeout(3000, afterYes());
+	// setTimeout(300, afterYes());
 
-	window.location.href="love.html";
+	window.location.href="ai.html";
 }
+
+// afterYes = () => {
+// 	let aterYesHtml = ` <p>那我重新介绍一下我自己！</p>
+// 						<p>我是个吃货！</p>
+// 						<p>爱吃火锅！</p>
+// 						<p>你呢？你不用回答，你只需念这三句的前一个字！</p>
+// 						<p>你知道吗？喜欢你的我很多，不缺我一个，</p>
+// 						<p>我喜欢的人很少，只有你一个。</p>
+// 						<p>请记住你的身份，你是老子的人！</p>`;
+					
+// 	document.getElementById("con").innerHTML = aterYesHtml;
+// }
+
+
+
+
+
+
+
+
 
 exit = (e) => {
     document.getElementById("finalNo").style.display = 'none';
 }
 
-// afterYes = () => {
-// 	let aterYesHtml = `<p>初识你名，久居我心</p>
-// 						<p>花开成海，思你成灾</p>
-// 						<p>一人一心，白首不离</p>
-// 						<p>几份痴情，几份在意</p>
-// 						<p>尽我所能，爱你所有</p>
-// 						<p>承蒙厚爱，请多指教</p>
-// 						<p>携子之手，陪你到老</p>
-// 						<p>久伴不离，此生不弃</p>
-// 						<p>余生很长，多多指教</初识你名，久居我心><br>`;
-// 	document.getElementById("con").innerHTML = aterYesHtml;
-// }
+
 
 no = () => {
     if (countNo == 5) {
         document.getElementById("finalNo").style.display = 'block';
     } else {
-        let node = document.createElement("H4");
+        let node = document.createElement("p");
         node.innerHTML = noText[countNo].text;
         document.getElementById("container").appendChild(node);
         countNo += 1;
@@ -64,6 +105,16 @@ no = () => {
 
 
 
+// (function () {
+// 	document.addEventListener('DOMContentLoaded', function () {
+//  var deviceWidth = document.documentElement.clientWidth;
+//  document.documentElement.style.fontSize = deviceWidth / 30 + 'px';
+// 	}, false);
+//  window.onresize = function(){
+//  var deviceWidth = document.documentElement.clientWidth;
+//  document.documentElement.style.fontSize = deviceWidth / 30 + 'px';
+//  };
+//  })();
 
 
 
