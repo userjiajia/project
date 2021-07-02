@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-v3.3.0.js"></script>
+    <style type="text/css">
+/* 响应试 */
+
+        
+        /* 1. 超小屏幕下  小于 768  布局容器的宽度为 100% */
+        
+        @media screen and (max-width: 767px) {
+            .container {
+                /* width: 100%; */
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            .ul{
+            text-align: left;
+            margin-top: 40px;
+        }
+        
+
+        #alert{
+            background-repeat: repeat-y;
+            background-size: 100%;
+            height: -89vh;
+            display: none; 
+            background-image: url(./img/10.jpg);
+            text-align: center;
+            height: 107vh;
+            top: -86vh;
+            position: relative;
+            left: 0px;
+            color: rgba(255, 255, 255, 0.733);
+       }
+
+
+        .cont{
+            position: relative;
+            background-repeat: no-repeat;
+            top: 445px;
+            width: 146px;
+        }
+        #gif{
+        height: 425px;
+       }
+        }
+        /* 2. 小屏幕下  大于等于768  布局容器改为 750px */
+        
+        /* @media screen and (min-width: 768px) {
+            .container {
+                width: 750px;
+                font-size: 22x;
+            }
+        } */
+        /* 3. 中等屏幕下 大于等于 992px   布局容器修改为 970px */
+        
+        /* @media screen and (min-width: 992px) {
+            .container {
+                width: 40%;
+                font-size: 27px;
+            }
+        } */
+        /* 4. 大屏幕下 大于等于1200 布局容器修改为 1170 */
+        
+        @media screen and (min-width: 1200px) {
+            .container {
+                width: 30%;
+                font-size: 24px;
+            }
+            .ul{
+            text-align: left;
+            margin-top: 40px;
+            }
+       
+        .cont{
+            position: relative;
+            background-repeat: no-repeat;
+            top: 630px;
+            width: 221px;
+        }
+
+        #alert{
+            background-repeat: repeat-y;
+            background-size: 100%;
+            height: -89vh;
+            display: none; 
+            background-image: url(./img/10.jpg);
+            text-align: center;
+            height: 107vh;
+            top: -89vh;
+            position: relative;
+            left: 0px;
+            color: rgba(255, 255, 255, 0.733);
+       }
+       #gif{
+        height: 325px;
+       }
+        }
+    
+
+
+
+
+/* 响应式 */
+/* html,body{
+    width: 100%;
+    height: 100%;
+} */
+
+*{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        transition: all 8s;
+        cursor: pointer;
+        /* font-family:"SentyTEA  新蒂下午茶体"; */
+    }
+    .box{
+         /* border: 1px solid; */
+         width: 85%;
+         margin: auto;
+    } 
+
+
+
+
+
+   
+        .container{
+            height: 93vh;
+            margin: auto;
+            background-color:white;
+            padding-top: 120px;
+            background-image: url(./img/8.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            /* border: 1px solid; */
+            
+
+        }
+        #container>h1{
+            text-align: center;
+        }
+        .btn{
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 50px;
+            text-align: center;
+            border:none;
+            /* border: 1px solid rgb(243, 206, 127); */
+            background-color: rgb(211, 190, 158);
+        }
+        #gif{
+            width: 98%;
+            height: 200px;
+            background: url(./img/1.gif);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+}
+
+        
+        /* #gif>img{
+            width: 100%;
+            border-radius: 15px;
+        } */
+        
+        .ul li{
+            margin-top: 10px;
+            border-radius: 15px;
+            padding: 15px;
+            background-color: #efeeee;
+            list-style: none;
+
+
+        }
+        .ul li:hover{
+            background-color: #fbbbcc;
+        }
+
+        
+       #title{
+           margin-bottom: 20px;
+           /* border: 1px solid; */
+        padding-left: 10px;
+        margin-top: 10px;
+       }
+
+
+       .cont{
+            margin: auto;
+            background-image: url(./img/8.png);
+            height: 235px;
+            background-size: 100%;
+            
+       }
+       
+       
+       
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div id="container">
+                <h3 id="title_1">1/4</h3>
+                <div id="gif">
+                    <!-- <img src="./img/1.gif" alt="" id="img"> -->
+                </div>
+                <p id="title">你女朋友说：<br>
+                哎！你看那个女的腿好长呀~😊
+                </p>
+                <div class="ul">
+                    <ul>
+                        <li class="list" id="0" onclick="list(this.id)" > A 我不叫哎 </li>
+                        <li class="list" id="1" onclick="list(this.id)" > B 没事，我就喜欢腿短的</li>
+                        <li class="list" id="2" onclick="list(this.id)" > C 左边那女的腿更长</li>
+                        <li class="list" id="3" onclick="list(this.id)" > D 哪？哪有腿</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <!-- <div id="btn">
+                <button class="btn" onclick="no()">确定 √</button>
+            </div> -->
+            <!-- <div id="finalNo">
+                <div id="exit" onclick="exit()">✖</div>
+            </div> -->
+        </div>
+
+        <div id="alert">
+            <div class="cont" onclick="no()">
+                
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    <script>
+        // 声明对象数组
+        var num = 0;
+        var num2=0;
+  
+    var title = document.getElementById("title");
+    var liarry = document.getElementsByClassName("list");
+    var alert = document.getElementById("alert");
+    var console = document.getElementById("console");
+    var biaoti = document.getElementById("title_1");
+    var gif = document.getElementById("gif");
+
+    var a = 0,b=0,c=0,d=0;
+    var sum = 0;
+    function change(){
+		$circles.removeClass('active');
+		$circles.eq(idx).addClass('active');
+
+	}
+
+    function list(e) {
+        $(".list").css({"background":"#efeeee"});
+        $(`#${e}`).css({"background":"#fbbbcc"});
+
+
+        if(e==0){
+            a+=5;
+        }else if(e==1){
+            b+=10;
+        }else if(e==2){
+            c+=20;
+        }else if(e==3){
+            d+=25;
+        }
+        sum=a+b+c+d;
+        setTimeout(after(),8000);
+
+    }
+        
+    
+
+
+
+function after(){
+    var imgs =   document.getElementById("img");
+    if(num2==0){
+    gif.style.backgroundImage="url('./img/2.gif')";
+    gif.style.backgroundPosition="0px -150px";
+    biaoti.innerHTML="2/4";
+    title.innerHTML="你女朋友说：<br>你看我是不是胖了😔";
+    liarry[0].innerHTML=" A 还行吧，就比我那朋友胖一点";
+    liarry[1].innerHTML=" B 没有没有，你胖的不明显";
+    liarry[2].innerHTML=" C 太瘦了，还得多吃点";
+    liarry[3].innerHTML=" D 那胖？胸嘛？";
+    
+    num2++;
+}else if(num2==1){
+    gif.style.backgroundImage="url('./img/3.gif')";
+    gif.style.backgroundPosition="0px 0px";
+    gif.style.backgroundSize="119%";
+    biaoti.innerHTML="3/4";
+    title.innerHTML="你女朋友说：<br>闺蜜买了个包包，真好看😋";
+
+    liarry[0].innerHTML=" A 你闺蜜也挺好看的";
+    liarry[1].innerHTML=" B 没有吧，比你那几个丑多了";
+    liarry[2].innerHTML=" C 我兄弟那双鞋也挺好看";
+    liarry[3].innerHTML=" D 链接发来吧宝贝";
+    
+    
+    num2++;
+}else if(num2==2){
+    gif.style.backgroundImage="url('./img/4.gif')";
+    gif.style.backgroundPosition="0px 0px";
+    gif.style.backgroundSize="129%";
+    biaoti.innerHTML="4/4";
+    title.innerHTML="你女朋友说：<br>我好像生病了😫";
+
+    liarry[0].innerHTML=" A 多喝热水";
+    liarry[1].innerHTML=" B 谁叫你天天穿那么少";
+    liarry[2].innerHTML=" C 离我远点";
+    liarry[3].innerHTML=" D 小可怜，快到我怀里来";
+
+    num2=-2;
+
+    
+    
+
+   
+    
+    
+
+}else{
+    setTimeout(jieguo(),5000);
+}
+}
+
+// no事件
+// function no(){
+        
+
+//    
+  
+gif.style.background="url((gifs[1].img))";
+
+     var p = document.createElement("p");
+        p.innerHTML = notext[num].text;
+        document.getElementById("container").appendChild(p);
+        num++;
+
+
+
+function jieguo(){
+    if(sum>=90){
+        alert.style.display="block";
+        $("#alert").css({"background":"url(./img/11.jpg)"});
+
+
+
+        }else if(sum>=60 && sum<90){
+            alert.style.display="block";
+            $("#alert").css({"background":"url(./img/10.jpg)"});
+        }else if(sum>=0 && sum<60){
+            alert.style.display="block";
+            $("#alert").css({"background":"url(./img/12.jpg)"});
+        }
+}
+
+
+
+function no(){
+        window.location.href="test_1.html";
+    }
+    
+
+
+
+
+
+    </script>
+</body>
+</html>

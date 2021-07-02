@@ -1,79 +1,216 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name=”viewport” content=”width=device-width, initial-scale=1″ />
-	<title>喜欢你</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-v3.3.0.js"></script>
+    <style type="text/css">
+/* 响应试 */
+
+        /* 1. 超小屏幕下  小于 768  布局容器的宽度为 100% */
+
+        
+        @media screen and (max-width: 767px) {
+            .container {
+                /* height: 100%; */
+                width: 100%;
+                font-size: 30px;
+                border: 1px solid rgba(255,166,190);
+                height: 812px;
+                background-image: url(./img/6.jpg);
+                text-align: center;
+                background-repeat: no-repeat;
+            }
+            .box{
+                top: 600px;
+                /* position: relative; */
+                margin: auto;
+                width: 94%;
+                margin-top: 300px;
+            }
+            
+            #title{
+               
+            margin-bottom: 10px;
+            font-size: 47px;
+            font-weight: 0;
+            -webkit-text-stroke: 1px #000000;
+            color: rgba(255,203,203,0);
+            font-family: "宋体";
+            }
+            #gif{
+                font-size: 48px;
+                font-weight: 500;
+            }
+            .imgbtn{
+                margin: auto;
+                background-image: url(./img/7.png);
+                width: 169px;
+                height: 137px;
+                /* border: 1px solid; */
+                background-size: 100%;
+                background-repeat: no-repeat;
+                /* margin-top: 236px; */
+                position: relative;
+                top: 96px;
+            }
+            
+        }
+        /* 2. 小屏幕下  大于等于768  布局容器改为 750px */
+        
+       @media screen and (min-width: 768px) {
+            .container {
+                width: 100%;
+                font-size: 22px;
+                
+            }
+            .box{
+                top: 600px;
+                position: relative;
+                left: 10px;
+                border: 1px solid rgba(251,187,204);
+                width: 70%;
+            }
+            
+        }
+        /* 3. 中等屏幕下 大于等于 992px   布局容器修改为 970px */
+        
+        /* @media screen and (min-width: 992px) {
+            .container {
+                width: 40%;
+                font-size: 27px;
+            }
+           
+        } */
+        /* 4. 大屏幕下 大于等于1200 布局容器修改为 1170 */
+        
+        @media screen and (min-width: 1200px) {
+            .container {
+                width: 600px;
+                font-size: 26px;
+                /* height: 100vh;  */
+                background-image: url(./img/6.jpg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                text-align: center;
+            }
+            .box{
+                width: 93%;
+            top: 258px;
+            margin: auto;
+            height: 300px;
+                    }
+            #title{
+                margin-bottom: 10px;
+                font-size: 62px;
+                font-weight: 0;
+                -webkit-text-stroke: 2px #000000;
+                color: rgba(255, 203, 203,0);
+                font-family: "宋体";
+
+            }
+            #gif{
+                font-size: 65px;
+                font-weight: 500;
+            }
+          
+
+            .imgbtn{
+            margin: auto;
+            background-image: url(./img/7.png);
+            width: 300px;
+            height: 235px;
+            background-size: 100%;
+            margin-top: 335px;
+            }
+        }
+    
+        /* .box{
+            
+            position: relative;
+            border: 1px solid;
+        } */
+
+
+
+/* 响应式 */
+/* html,body{
+    width: 100%;
+    height: 100%;
+} */
+
+*{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        transition: all 3s;
+        cursor: pointer;
+    }
+    /* .box{
+        /* border: 1px solid;
+    }  */
+
+
+  
+
+   
+        .container{
+            /* width: 791px;  */
+            height: 100vh;
+            margin: auto;
+            /* background-color: antiquewhite; */
+            
+
+           
+        }
+        
+       
+        
+        
+        
+       
+        @keyframes titlefont{
+            form{
+
+            }to{
+                /* transform:scale(1,1);
+                width: 100%; */
+                font-size: 64px;
+            }
+        }
+        
+        #gif{
+            animation-play-state: running;
+            animation-timing-function: linear;
+            animation-name:minfont;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+            transition-timing-function: linear;
+        }
+      
+    
+    </style>
+    <title>Document</title>
 </head>
-
-<script src="./js/jquery-v3.3.0.js"></script>
-<!-- 兼容浏览器 -->
-<link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
-
-  <script type="text/javascript" src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-  <script src="https://cdn.bootcss.com/picturefill/3.0.3/picturefill.min.js"></script>
-
-
- 
-<!-- 兼容浏览器 -->
-
-
-
-
-<script src="./js/jquery-2.0.3.min.js"></script>
-<script src="./js/index.js"></script>
-<link rel="stylesheet" href="./css/index.css">
-<style>
-	/* body{
-		-o-transform:rotate(7deg); 
--ms-transform:rotate(7deg); 
-
--moz-transform:rotate(7deg); 
-
--webkit-transform:rotate(7deg);
-
-transform:rotate(7deg); 
-	} */
-
-	.btn2{
-		background-color:rgba(255, 255, 255,0);
-		border: 4px solid rgba(0, 0, 0, 0.6);
-		color: rgba(0, 0, 0, 0.6);
-		
-	}
-	.btn2:hover{
-		color: rgb(255, 255, 255);
-	}
-</style>
-
 <body>
+    <div class="container">
+        <div class="box">
+            <div id="container" >
+            </div>
+            <div class="imgbtn" onclick="no()">
+            </div>
+         
+        </div>
+    </div>
+    
+<script>
+    function no(){
+        window.location.href="test_1.html";
+    }
+</script>
 
 
-
-	
-	<div id="con">
-		<div id="container">
-			<h2 class="title"><strong>我想和你在一起</strong></h2>
-			<div id="gif"></div>
-			<p>出来看星星吗？不看星星也行，先出来！</p>
-		</div>
-		<div id="btn">
-<button class="btn" onclick="yes()">可以 ❤</button>
-			<button class="btn btn2" onclick="no()">不行 ✖</button>
-		</div>
-		<div id="finalNo" >
-			<div id="exit" onclick="exit()">✖</div>
-			好不好嘛,你就同意吧嘛😔
-		</div>
-	</div>
 </body>
-
-
-
-
-
-
-
 </html>
